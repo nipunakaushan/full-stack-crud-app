@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import List from './componenets/List';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
 
-export default App;
+  const [input, setInput] = useState("");
+
+    return (
+    <main>
+      <h1 className="title">MERN CRUD OPERATIONS</h1>
+
+      <div className="input_holder">
+        <input type="text" value={input} onChange={(e) => setInput(e.target.value) }/>
+
+      <button type="submit">Add Tasks</button>
+      </div>
+
+      <ul>
+        <List />
+      </ul>
+    </main> 
+    );
+
+  
+
+};
+
+export default App
+
+//this function created using RAFCE code 
